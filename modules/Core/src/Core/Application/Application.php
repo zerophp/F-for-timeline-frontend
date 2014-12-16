@@ -29,7 +29,7 @@ class Application
 
     public static function dispatch()
     {
-        $controllerNameClass= '\Application\controllers\\'.self::$controller;
+        $controllerNameClass= '\Application\Controllers\\'.self::$controller;
         
         $controller = new $controllerNameClass();
         $actionName = self::$action;
@@ -38,13 +38,14 @@ class Application
         self::$view=ob_get_contents();
         ob_end_clean();
 
-        self::twoStep($controller->layout);
+        self::twoStep(self::$view, $controller->layout);
     }
 
-    public static function twoStep($layout)
+    public static function twoStep($view, $layout)
     {
-        echo self::$view;
-        echo $layout;
+        //echo self::$view;
+//         echo $layout;
+        include __DIR__ .'/../../../../'.'Application/src/Application/layouts'.DIRECTORY_SEPARATOR.$layout ;
                
     }    
   

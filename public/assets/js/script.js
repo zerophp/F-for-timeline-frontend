@@ -2,6 +2,6 @@
 $(function(){
 	
 	var timeline = new VMM.Timeline();
-	timeline.init("assets/data.json");
+	timeline.init("/assets/data.json");
 
 });
