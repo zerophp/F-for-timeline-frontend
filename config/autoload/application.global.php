@@ -6,5 +6,8 @@ $config = array(
         'password'=>'1234',
         'db'=>'timeline'
     ),   
-    'repository'=>'db' 
+    'repository'=>'db',
+    'adapter'=>'Core\Adapters\Mysql',
+    'default_controller'=>'index',
+    'default_action'=>'index'
 );
